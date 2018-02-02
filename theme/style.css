@@ -8,7 +8,22 @@ body {
 
 body {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  line-height: normal;
+  font-weight: normal; }
+
+p {
+  margin: auto; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: bold;
+  line-height: normal; }
 
 a {
   text-decoration: none; }
@@ -42,14 +57,15 @@ header {
   font-weight: bold;
   text-transform: uppercase;
   color: black; }
+  .title:hover {
+    text-decoration: none; }
 
 main {
   flex: 1 0 auto;
   padding: 3em; }
   main article {
     background-color: white;
-    text-align: justify;
-    width: 20%; }
+    text-align: justify; }
     main article .info {
       padding: 1.5em;
       display: flex;
@@ -57,6 +73,7 @@ main {
     main article h3 {
       color: black;
       margin: 0;
+      font-size: 1.5em;
       text-transform: uppercase; }
     main article p {
       font-size: 0.8em;
@@ -72,10 +89,10 @@ main {
       width: 100%; }
       main article input:hover {
         background-color: #303030; }
-    main article section {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap; }
+    main article .container {
+      padding: 0; }
+    main article .col + .col {
+      text-align: right; }
 
 footer {
   padding: 0.5em 3em; }

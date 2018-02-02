@@ -1,7 +1,7 @@
 <?php include_once('common/header.php'); ?>
 
 <main>
-<div>
+<div id="workshop_grid">
     <article>
         <div class="info">
             <h3>uc</h3>

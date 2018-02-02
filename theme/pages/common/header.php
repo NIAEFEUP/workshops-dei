@@ -1,3 +1,4 @@
+<?php require '/var/www/html/wp-blog-header.php'; ?>
 <!DOCTYPE html>
 <html>
 
@@ -17,7 +18,7 @@
 	 crossorigin="anonymous"></script>
 	<script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 	 crossorigin="anonymous"></script>
-
+	<?php wp_head(); ?>
 </head>
 
 <body>
@@ -25,8 +26,8 @@
 <header>
     <img alt="Logo" src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo.png">
     <nav>
-        <a class="title" href="estudantes.html">Estudantes</a>
-        <a class="title" href="docentes.html">Docentes</a>
-        <a class="title" href="palestrantes.html">Palestrantes</a>
+        <a class="title" href="<?php echo get_bloginfo('template_directory'); ?>/pages/students.php">Estudantes</a>
+        <a class="title" href="<?php echo get_bloginfo('template_directory'); ?>/pages/professors.php">Docentes</a>
+        <a class="title" href="<?php echo get_bloginfo('template_directory'); ?>/pages/speakers.php">Palestrantes</a>
     </nav>
 </header>

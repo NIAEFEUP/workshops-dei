@@ -1,3 +1,4 @@
+<?php require '../../../../wp-blog-header.php'; ?>
 <?php include_once('common/header.php'); ?>
 
 <main>

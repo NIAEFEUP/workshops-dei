@@ -6,6 +6,7 @@ services:
       image: wordpress
       restart: always
       volumes:
+          - ./wordpress:/var/www/html
           - type: bind 
             source: ./theme
             target: /var/www/html/wp-content/themes/workshop-dei

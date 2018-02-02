@@ -1,5 +1,7 @@
 <?php include_once('common/header.php'); ?>
 
+<script src="../javascript/event-handler.js" defer></script>
+
 <main>
     <div class="container">
         <div class="row">

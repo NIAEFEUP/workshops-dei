@@ -75,8 +75,18 @@ function create_talk_node(attrs) {
 
     node_div_col_sm.appendChild(node_article);
 
-    document.getElementsByClassName('row')[0].appendChild(node_div_col_sm);
-    
+    let workshop_count = document.getElementsByClassName('col-sm').length;
+    console.log(workshop_count);
+
+    if (workshop_count % 3 == 0){
+        let node_div_new_row = document.createElement('div');
+        node_div_new_row.setAttribute('class', 'row');
+        //node_div_new_row.innerHTML = '<div class="col-sm"></div>';
+        document.getElementsByClassName('container')[0].appendChild(node_div_new_row);
+    }
+
+    node_div_col_sm.setAttribute('class','col-sm');
+    document.querySelector('main > .container > :last-child').appendChild(node_div_col_sm);
 }
 
 /* Encodes arguments to feed API. */

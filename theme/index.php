@@ -1,2 +1,1 @@
-<?php include_once('pages/students.php'); ?>
-
+<?php header('Location:' . get_bloginfo('template_directory') . '/pages/students.php') ?>

@@ -1,33 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Workshop Scheduler</title>
-	<script src="javascript/script.js" defer></script>
-</head>
-
-<body>
-	<nav>
-		<a href="estudantes.html">Estudantes</a>
-		<a href="docentes.html">Docentes</a>
-		<a href="palestrantes.html">Palestrantes</a>
-	</nav>
-	
+<?php include_once('common/header.php'); ?>
+<main>
+<div>
     <h1>Formulário</h1>
-    <form>
-        Nome Completo<br>
-        <input type="text" name="full_name" /><br>
-
-        Unidade Curricular<br>
-        <input type="text" name="subject" /><br>
-
-        Informações<br>
-        <textarea rows="4" cols="50"></textarea><br>
-
-        <button type="submit" id="create_talk">Submit</button>    
+    <form method="post" action="#">
+        <label for="name">Nome Completo</label>
+        <input type="text" name="name">
+        <label for="uc">Unidade Curricular</label>
+        <input type="text" name="uc">
+        <label for="info">Informações</label>
+        <textarea rows="20" cols="40" name="info"></textarea>
+        <input type="submit">
     </form>
-    
-    <footer>© 2018 Departamento de Informática</footer>
-</body>
-
-</html>
+</div>
+</main>
+<?php include_once('common/footer.php'); ?>

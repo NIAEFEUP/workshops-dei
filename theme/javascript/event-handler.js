@@ -25,7 +25,7 @@ function parse_talk(response) {
         let talk_date = `${talk_utc[3]}/${talk_utc[2]}/${talk_utc[1]}`;
         let talk_time = `${talk_utc[4]}h${talk_utc[5]}`;
 
-        let talk_attrs = {'title': talk_title, 'desc': talk_description, 'date': talk_date, 'time': talk_time};
+        let talk_attrs = {'title': talk_title, 'desc': talk_description, 'date': talk_date, 'time': talk_time, 'speaker': 'ademar'};
         create_talk_node(talk_attrs);
     });
 
@@ -33,43 +33,50 @@ function parse_talk(response) {
 
 function create_talk_node(attrs) {
     let node_article = document.createElement('article');
-    let node_div = document.createElement('div');
-    node_div.setAttribute('class', 'info');
+    let node_div_info = document.createElement('div');
+    node_div_info.setAttribute('class', 'info');
 
-    let node_h3 = document.createElement('h3');
-    node_h3.innerHTML = attrs.title;
+    let node_div_col_sm = document.createElement('div');
+    node_div_col_sm.setAttribute('class', 'col-sm');
 
-    let node_p = document.createElement('p');
-    node_p.innerHTML = attrs.desc;
+    let node_div_container = document.createElement('div'),
+        node_div_row = document.createElement('div'),
+        node_div_w_100 = document.createElement('div'),
 
-    let node_section = document.createElement('section');
+        node_div_col_calendar = document.createElement('div'),
+        node_div_col_clock = document.createElement('div'),
+        node_div_col_user = document.createElement('div');
 
-    let node_span_date = document.createElement('span');
-    
-    let node_icon_1 = document.createElement('i');
-    node_icon_1.setAttribute('class', 'far fa-calendar-alt');
-    node_span_date.appendChild(node_icon_1);
-    node_span_date.innerHTML += attrs.date;
+    node_div_container.setAttribute('class', 'container');
+    node_div_row.setAttribute('class', 'row');
+    node_div_w_100.setAttribute('class', 'w-100');
 
-    let node_span_time = document.createElement('span');
-    
-    let node_icon_2 = document.createElement('i');
-    node_icon_2.setAttribute('class', 'far fa-clock');
-    node_span_time.appendChild(node_icon_2);
-    node_span_time.innerHTML += attrs.time;
+    node_div_col_calendar.setAttribute('class', 'col');
+    node_div_col_calendar.innerHTML = `<span><i class="far fa-calendar-alt"></i>${attrs.date}</span>`;
 
-    node_section.appendChild(node_span_date);
-    node_section.appendChild(node_span_time);
+    node_div_col_clock.setAttribute('class', 'col');
+    node_div_col_clock.innerHTML = `<span><i class="far fa-clock"></i>${attrs.time}</span>`;
 
-    node_div.appendChild(node_h3);
-    node_div.appendChild(node_p);
-    node_div.appendChild(node_section);
+    node_div_col_user.setAttribute('class', 'col');
+    node_div_col_user.innerHTML = `<span><i class="fas fa-user"></i>${attrs.speaker}</span>`;
 
-    node_article.appendChild(node_div);
-    
+    node_div_row.appendChild(node_div_col_calendar);
+    node_div_row.appendChild(node_div_col_clock);
+    node_div_row.appendChild(node_div_w_100);
+    node_div_row.appendChild(node_div_col_user);
+
+    node_div_container.appendChild(node_div_row);
+
+    node_div_info.innerHTML = `<h3>${attrs.title}</h3><p>${attrs.desc}</p>`;
+    node_div_info.appendChild(node_div_container);
+
+    node_article.appendChild(node_div_info);
     node_article.innerHTML += '<input type="button" value="Select">';
 
-    document.getElementById('workshop_grid').appendChild(node_article);
+    node_div_col_sm.appendChild(node_article);
+
+    document.getElementsByClassName('row')[0].appendChild(node_div_col_sm);
+    
 }
 
 /* Encodes arguments to feed API. */

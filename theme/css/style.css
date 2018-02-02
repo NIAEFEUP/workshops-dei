@@ -1,0 +1,92 @@
+html,
+body {
+  margin: 0 auto;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: #303030;
+  background-color: #e4e4e4;
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column; }
+
+a {
+  text-decoration: none; }
+
+input {
+  border: none;
+  outline: none;
+  cursor: pointer; }
+
+header,
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white; }
+
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  padding: 0 3em; }
+  header img {
+    width: 20%;
+    margin-right: auto; }
+  header nav a {
+    margin-left: 2em; }
+    header nav a:hover {
+      color: #912d19; }
+
+.title {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black; }
+
+main {
+  flex: 1 0 auto;
+  padding: 3em; }
+  main article {
+    background-color: white;
+    text-align: justify;
+    width: 20%; }
+    main article .info {
+      padding: 1.5em;
+      display: flex;
+      flex-direction: column; }
+    main article h3 {
+      color: black;
+      margin: 0;
+      text-transform: uppercase; }
+    main article p {
+      font-size: 0.8em;
+      width: 100%; }
+    main article i {
+      color: #9c9c9c;
+      padding: 0.5em 1em 0 0; }
+    main article input {
+      background-color: #912d19;
+      color: white;
+      font-size: 1em;
+      padding: 1em;
+      width: 100%; }
+      main article input:hover {
+        background-color: #303030; }
+    main article section {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+
+footer {
+  padding: 0.5em 3em; }
+  footer span {
+    margin-right: auto;
+    color: black; }
+  footer img {
+    margin-left: 2em; }
+  footer img#logo_ni {
+    width: 3%; }
+  footer img#logo_ieee {
+    width: 8%; }
+
+/*# sourceMappingURL=style.css.map */

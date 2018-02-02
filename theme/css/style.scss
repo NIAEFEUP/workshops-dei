@@ -1,0 +1,128 @@
+$font-stack: 'Trebuchet MS',
+'Lucida Sans Unicode',
+'Lucida Grande',
+'Lucida Sans',
+Arial,
+sans-serif;
+$body-color: #303030;
+$black-color: black;
+$white-color: white;
+$red-color: #912d19;
+$grey-color: #9c9c9c;
+$background-color: #e4e4e4;
+html,
+body {
+    margin: 0 auto;
+    font-family: $font-stack;
+    color: $body-color;
+    background-color: $background-color;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+header,
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: $white-color;
+}
+
+header {
+    position: sticky;
+    position: -webkit-sticky;
+    padding: 0 3em;
+    img {
+        width: 20%;
+        margin-right: auto;
+    }
+    nav {
+        a {
+            margin-left: 2em;
+            &:hover {
+                color: $red-color;
+            }
+        }
+    }
+}
+
+.title {
+    font-size: 1.3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $black-color;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 3em;
+    article {
+        background-color: $white-color;
+        text-align: justify;
+        width: 20%;
+        .info {
+            padding: 1.5em;
+            display: flex;
+            flex-direction: column;
+        }
+        h3 {
+            color: $black-color;
+            margin: 0;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 0.8em;
+            width: 100%;
+        }
+        i {
+            color: $grey-color;
+            padding: 0.5em 1em 0 0;
+        }
+        input {
+            background-color: $red-color;
+            color: $white-color;
+            font-size: 1em;
+            padding: 1em;
+            width: 100%;
+            &:hover {
+                background-color: $body-color;
+            }
+        }
+        section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+footer {
+    padding: 0.5em 3em;
+    span {
+        margin-right: auto;
+        color: $black-color;
+    }
+    img {
+        margin-left: 2em;
+    }
+    img#logo_ni {
+        width: 3%;
+    }
+    img#logo_ieee {
+        width: 8%;
+    }
+}

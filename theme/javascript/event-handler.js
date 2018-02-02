@@ -25,12 +25,14 @@ function parse_talk(response) {
         let talk_date = `${talk_utc[3]}/${talk_utc[2]}/${talk_utc[1]}`;
         let talk_time = `${talk_utc[4]}h${talk_utc[5]}`;
 
-        console.log(talk_date, talk_time);
-
-        document.createElement('article');
-        
+        let talk_attrs = {'name': talk_name, 'desc': talk_description, 'date': talk_date, 'time': talk_time};
+        create_talk_node(talk_attrs);
     });
 
+}
+
+function create_talk_node(attrs) {
+    document.createElement('div');
 }
 
 /* Encodes arguments to feed API. */

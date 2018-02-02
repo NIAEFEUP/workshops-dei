@@ -1,25 +1,33 @@
-version: '3.1'
+version: '3.4'
 
 services:
 
-  wordpress:
-    image: wordpress
-    restart: always
-    ports:
-      - 8080:80
-    environment:
-      WORDPRESS_DB_PASSWORD: example
+    wordpress:
+      image: wordpress
+      restart: always
+      volumes:
+          - ./wordpress:/var/www/html
+          - type: bind 
+            source: ./theme
+            target: /var/www/html/wp-content/themes/workshop-dei
+            read_only: true
+      ports:
+        - 8080:80
+      environment:
+        WORDPRESS_DB_PASSWORD: example
 
-  mysql:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - 4000:80
-    links:
-      - mysql:db
-    environment:
-      MYSQL_ROOT_PASSWORD: example
+    mysql:
+      image: mysql:5.7
+      restart: always
+      volumes:
+          - ./db:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: example
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      ports:
+        - 4000:80
+      links:
+        - mysql:db
+      environment:
+        MYSQL_ROOT_PASSWORD: example

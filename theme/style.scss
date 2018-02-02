@@ -10,20 +10,34 @@ $white-color: white;
 $red-color: #912d19;
 $grey-color: #9c9c9c;
 $background-color: #e4e4e4;
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 html,
 body {
-    margin: 0 auto;
     font-family: $font-stack;
     color: $body-color;
     background-color: $background-color;
-    height: 100%;
+    line-height: normal;
+    font-weight: normal;
 }
 
 body {
+    margin-bottom: 100px;
+}
+
+body>.container {
+    padding: 60px 15px 0;
+}
+
+header,
+footer {
     display: flex;
-    flex-direction: column;
-    line-height: normal;
-    font-weight: normal;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 p {
@@ -51,34 +65,26 @@ input {
     cursor: pointer;
 }
 
-header,
-footer {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: $white-color;
-}
-
 header {
-    position: sticky;
-    position: -webkit-sticky;
-    padding: 0 3em;
     img {
-        width: 20%;
-        margin-right: auto;
+        width: 10em;
     }
     nav {
+        padding: 0.2em 3em !important;
+        background-color: $white-color;
+        box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.5);
         a {
-            margin-left: 2em;
+            color: $black-color !important;
+            margin-left: 1.2em;
             &:hover {
-                color: $red-color;
+                color: $red-color !important;
             }
         }
     }
 }
 
 .title {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
     color: $black-color;
@@ -89,10 +95,10 @@ header {
 
 main {
     flex: 1 0 auto;
-    padding: 3em;
     article {
         background-color: $white-color;
         text-align: justify;
+        margin-top: 2em;
         .info {
             padding: 1.5em;
             display: flex;
@@ -101,7 +107,7 @@ main {
         h3 {
             color: $black-color;
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.3em;
             text-transform: uppercase;
         }
         p {
@@ -125,14 +131,18 @@ main {
         .container {
             padding: 0;
         }
-        .col + .col {
+        .col+.col {
             text-align: right;
         }
     }
 }
 
 footer {
+    position: absolute;
     padding: 0.5em 3em;
+    bottom: 0;
+    width: 100%;
+    background-color: $white-color;
     span {
         margin-right: auto;
         color: $black-color;
@@ -141,9 +151,9 @@ footer {
         margin-left: 2em;
     }
     img#logo_ni {
-        width: 3%;
+        width: 2.6em;
     }
     img#logo_ieee {
-        width: 8%;
+        width: 6em;
     }
 }

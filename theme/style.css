@@ -1,16 +1,26 @@
+html {
+  position: relative;
+  min-height: 100%; }
+
 html,
 body {
-  margin: 0 auto;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   color: #303030;
   background-color: #e4e4e4;
-  height: 100%; }
-
-body {
-  display: flex;
-  flex-direction: column;
   line-height: normal;
   font-weight: normal; }
+
+body {
+  margin-bottom: 100px; }
+
+body > .container {
+  padding: 60px 15px 0; }
+
+header,
+footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center; }
 
 p {
   margin: auto; }
@@ -33,27 +43,20 @@ input {
   outline: none;
   cursor: pointer; }
 
-header,
-footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: white; }
-
-header {
-  position: sticky;
-  position: -webkit-sticky;
-  padding: 0 3em; }
-  header img {
-    width: 20%;
-    margin-right: auto; }
+header img {
+  width: 10em; }
+header nav {
+  padding: 0.2em 3em !important;
+  background-color: white;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5); }
   header nav a {
-    margin-left: 2em; }
+    color: black !important;
+    margin-left: 1.2em; }
     header nav a:hover {
-      color: #912d19; }
+      color: #912d19 !important; }
 
 .title {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: bold;
   text-transform: uppercase;
   color: black; }
@@ -61,11 +64,11 @@ header {
     text-decoration: none; }
 
 main {
-  flex: 1 0 auto;
-  padding: 3em; }
+  flex: 1 0 auto; }
   main article {
     background-color: white;
-    text-align: justify; }
+    text-align: justify;
+    margin-top: 2em; }
     main article .info {
       padding: 1.5em;
       display: flex;
@@ -73,7 +76,7 @@ main {
     main article h3 {
       color: black;
       margin: 0;
-      font-size: 1.5em;
+      font-size: 1.3em;
       text-transform: uppercase; }
     main article p {
       font-size: 0.8em;
@@ -95,15 +98,19 @@ main {
       text-align: right; }
 
 footer {
-  padding: 0.5em 3em; }
+  position: absolute;
+  padding: 0.5em 3em;
+  bottom: 0;
+  width: 100%;
+  background-color: white; }
   footer span {
     margin-right: auto;
     color: black; }
   footer img {
     margin-left: 2em; }
   footer img#logo_ni {
-    width: 3%; }
+    width: 2.6em; }
   footer img#logo_ieee {
-    width: 8%; }
+    width: 6em; }
 
 /*# sourceMappingURL=style.css.map */

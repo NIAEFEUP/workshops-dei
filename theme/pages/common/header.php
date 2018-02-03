@@ -25,7 +25,7 @@
 
     <header>
         <nav class="navbar navbar-expand-md fixed-top navbar-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="../pages/students.php">
                 <img src="<?php echo get_bloginfo('template_directory'); ?>/assets/logo.png" class="d-inline-block align-top" alt="">
             </a>
             <button class="navbar-toggler w-100" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"

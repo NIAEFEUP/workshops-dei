@@ -35,13 +35,13 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto w-100 justify-content-end">
                     <li class="title nav-item">
-                        <a class="nav-link" href="#">Estudantes</a>
+                        <a class="nav-link" href="../pages/students.php">Estudantes</a>
                     </li>
                     <li class="title nav-item">
-                        <a class="nav-link" href="#">Docentes</a>
+                        <a class="nav-link" href="../pages/professors.php">Docentes</a>
                     </li>
                     <li class="title nav-item">
-                        <a class="nav-link" href="#">Palestrantes</a>
+                        <a class="nav-link" href="../pages/speakers.php">Palestrantes</a>
                     </li>
                 </ul>
             </div>

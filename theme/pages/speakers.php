@@ -1,4 +1,5 @@
 <?php include_once('common/header.php'); ?>
+
 <main>
 <div>
 <h1>Palestras</h1>
@@ -9,4 +10,5 @@
 </article>
 </div>
 </main>
+
 <?php include_once('common/footer.php'); ?>

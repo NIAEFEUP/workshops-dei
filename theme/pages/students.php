@@ -1,5 +1,5 @@
 <?php include_once('common/header.php'); ?>
-<script src="../javascript/event-handler.js" defer></script>
+<script src="../javascript/eb-extractor.js" defer></script>
 
 <main role="main" class="container">
     <div class="container">

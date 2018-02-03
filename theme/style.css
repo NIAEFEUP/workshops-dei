@@ -38,10 +38,16 @@ h6 {
 a {
   text-decoration: none; }
 
-input {
+input[type=button],
+input[type=submit] {
   border: none;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  background-color: #912d19;
+  color: white; }
+  input[type=button]:hover,
+  input[type=submit]:hover {
+    background-color: #303030; }
 
 header img {
   width: 10em; }
@@ -63,8 +69,14 @@ header nav {
   .title:hover {
     text-decoration: none; }
 
+.container {
+  padding: 0; }
+
 main {
   flex: 1 0 auto; }
+  main h1 {
+    color: black;
+    font-size: 1.5em; }
   main article {
     background-color: white;
     text-align: justify;
@@ -85,17 +97,33 @@ main {
       color: #9c9c9c;
       padding: 0.5em 1em 0 0; }
     main article input {
-      background-color: #912d19;
-      color: white;
       font-size: 1em;
       padding: 1em;
       width: 100%; }
-      main article input:hover {
-        background-color: #303030; }
     main article .container {
-      padding: 0; }
+      margin: 0; }
     main article .col + .col {
       text-align: right; }
+  main section {
+    padding: 3em 4em;
+    background-color: white;
+    width: 100%; }
+    main section form {
+      display: flex;
+      flex-direction: column; }
+    main section input[type=text],
+    main section textarea {
+      background-color: #FBFBFB;
+      border-radius: 3px;
+      border: 1px solid #e4e4e4; }
+    main section label {
+      font-weight: bold;
+      margin-top: 1.2em; }
+    main section input[type=submit] {
+      padding: 0.4em 1.4em;
+      border-radius: 3em;
+      margin-top: 2em;
+      align-self: flex-end; }
 
 footer {
   position: absolute;

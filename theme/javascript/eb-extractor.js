@@ -16,20 +16,23 @@ function load_scheduled_talks() {
 
 /**
  * Parser for single talk's API response.
+ * It is expected for each event's description to have a 'Speaker:' string.
  * @param {string} response - GET Response from Eventbrite API.
  */
 function parse_talk(response) {
     let talk_dict = JSON.parse(response);
     
     talk_dict.events.forEach(talk => {
-        let talk_title = talk.name.text;
-        let talk_description = talk.name.description;
-
         let talk_utc = talk.start.utc.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
         let talk_date = `${talk_utc[3]}/${talk_utc[2]}/${talk_utc[1]}`;
         let talk_time = `${talk_utc[4]}h${talk_utc[5]}`;
 
-        let talk_attrs = {'title': talk_title, 'desc': talk_description, 'date': talk_date, 'time': talk_time, 'speaker': 'ademar'};
+        let talk_description = talk.description.text.match(/(.*[\s\S]*)Speaker:(.*)/);
+
+        let talk_attrs = {
+            'title': talk.name.text, 'desc': talk_description[1], 'url': talk.url, 
+            'date': talk_date, 'time': talk_time, 'speaker': talk_description[2]
+        };
         create_talk_node(talk_attrs);
     });
 }
@@ -55,7 +58,9 @@ function create_talk_node(attrs) {
 
     let talk_full_box = document.createElement('div'); // Bootstrap's grid formatting div.
     talk_full_info.setAttribute('class', 'col-xs-12 col-sm-6 col-lg-4');
-    talk_full_info.innerHTML = `<article>${talk_full_info.innerHTML}<input type="button" value="Select"></article>`;
+
+    let talk_attend_button = `<input type="button" onclick="location.href='${attrs.url}';" value="Select">`;
+    talk_full_info.innerHTML = `<article>${talk_full_info.innerHTML}${talk_attend_button}</article>`;
 
     document.querySelector('main > .container > :first-child').appendChild(talk_full_info);
 }

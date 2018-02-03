@@ -51,8 +51,7 @@ function create_talk_node(attrs) {
     let talk_full_info = document.createElement('div'); // Bootstrap's info class div.
     talk_full_info.setAttribute('class', 'info');
 
-    talk_full_info.innerHTML = `<h3>${attrs.title}</h3><p>${attrs.desc}</p>`;
-    talk_full_info.appendChild(talk_details);
+    talk_full_info.innerHTML = `<div class='info'><h3>${attrs.title}</h3><p>${attrs.desc}</p><div class='container'>${talk_details.innerHTML}</div></div>`;
 
     let talk_full_box = document.createElement('div'); // Bootstrap's grid formatting div.
     talk_full_info.setAttribute('class', 'col-xs-12 col-sm-6 col-lg-4');

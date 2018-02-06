@@ -102,6 +102,10 @@ header {
     padding: 0;
 }
 
+.top-buffer {
+    margin-top: 2em;
+}
+
 main {
     flex: 1 0 auto;
     h1 {
@@ -111,17 +115,19 @@ main {
     article {
         background-color: $white-color;
         text-align: justify;
-        margin-top: 2em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
         .info {
             padding: 1.5em;
-            display: flex;
-            flex-direction: column;
+            display: block;
+            flex-grow: 1;
         }
         h3 {
             color: $black-color;
             margin: 0;
             font-size: 1.3em;
-            text-transform: uppercase;
+            margin: 0.2em 0;
         }
         p {
             font-size: 0.8em;

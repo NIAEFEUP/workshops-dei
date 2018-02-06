@@ -72,6 +72,9 @@ header nav {
 .container {
   padding: 0; }
 
+.top-buffer {
+  margin-top: 2em; }
+
 main {
   flex: 1 0 auto; }
   main h1 {
@@ -80,16 +83,18 @@ main {
   main article {
     background-color: white;
     text-align: justify;
-    margin-top: 2em; }
+    height: 100%;
+    display: flex;
+    flex-direction: column; }
     main article .info {
       padding: 1.5em;
-      display: flex;
-      flex-direction: column; }
+      display: block;
+      flex-grow: 1; }
     main article h3 {
       color: black;
       margin: 0;
       font-size: 1.3em;
-      text-transform: uppercase; }
+      margin: 0.2em 0; }
     main article p {
       font-size: 0.8em;
       width: 100%; }

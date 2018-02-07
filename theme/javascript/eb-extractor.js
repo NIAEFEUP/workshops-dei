@@ -27,7 +27,7 @@ function parse_talk(response) {
         let talk_date = `${talk_utc[3]}/${talk_utc[2]}/${talk_utc[1]}`;
         let talk_time = `${talk_utc[4]}h${talk_utc[5]}`;
 
-        let talk_description = talk.description.text.match(/(.*[\s\S]*)Speaker:(.*)/);
+        let talk_description = talk.description.text.match(/(.*[\s\S]*)Speaker: (.*)/);
 
         let talk_attrs = {
             'title': talk.name.text, 'desc': talk_description[1], 'url': talk.url, 
@@ -57,12 +57,12 @@ function create_talk_node(attrs) {
     talk_full_info.innerHTML = `<div class='info'><h3>${attrs.title}</h3><p>${attrs.desc}</p><div class='container'>${talk_details.innerHTML}</div></div>`;
 
     let talk_full_box = document.createElement('div'); // Bootstrap's grid formatting div.
-    talk_full_info.setAttribute('class', 'col-xs-12 col-sm-6 col-lg-4');
+    talk_full_info.setAttribute('class', 'top-buffer col-xs-12 col-sm-6 col-lg-4');
 
     let talk_attend_button = `<input type="button" onclick="location.href='${attrs.url}';" value="Select">`;
     talk_full_info.innerHTML = `<article>${talk_full_info.innerHTML}${talk_attend_button}</article>`;
 
-    document.querySelector('main > .container > :first-child').appendChild(talk_full_info);
+    document.querySelector(`main[class='container'] :first-child`).appendChild(talk_full_info);
 }
 
 /**

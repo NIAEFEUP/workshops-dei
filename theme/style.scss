@@ -196,3 +196,23 @@ footer {
         width: 6em;
     }
 }
+
+article.speaker-call {
+    a {
+        text-decoration: none;
+        color: #303030;
+    }
+    padding: 10px;
+    span {
+        display: inline-block;
+    }
+    .ws-field-title {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+}
+
+article.speaker-call:hover {
+    //cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
+}

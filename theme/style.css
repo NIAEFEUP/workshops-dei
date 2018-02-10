@@ -51,6 +51,7 @@ input[type=submit] {
 
 header img {
   width: 10em; }
+
 header nav {
   padding: 0.2em 3em !important;
   background-color: white;
@@ -146,4 +147,16 @@ footer {
   footer img#logo_ieee {
     width: 6em; }
 
-/*# sourceMappingURL=style.css.map */
+article.speaker-call {
+  padding: 10px; }
+  article.speaker-call a {
+    text-decoration: none;
+    color: #303030; }
+  article.speaker-call span {
+    display: inline-block; }
+  article.speaker-call .ws-field-title {
+    font-weight: bold;
+    margin-right: 5px; }
+
+article.speaker-call:hover {
+  background-color: rgba(0, 0, 0, 0.05); }

@@ -51,7 +51,6 @@ input[type=submit] {
 
 header img {
   width: 10em; }
-
 header nav {
   padding: 0.2em 3em !important;
   background-color: white;
@@ -75,6 +74,10 @@ header nav {
 
 .top-buffer {
   margin-top: 2em; }
+
+.v-center {
+  display: flex;
+  align-items: center; }
 
 main {
   flex: 1 0 auto; }
@@ -148,15 +151,23 @@ footer {
     width: 6em; }
 
 article.speaker-call {
-  padding: 10px; }
-  article.speaker-call a {
-    text-decoration: none;
-    color: #303030; }
+  margin: 1em 0; }
+  article.speaker-call hr {
+    border-top: 1px solid #000000; }
   article.speaker-call span {
     display: inline-block; }
+    article.speaker-call span.description {
+      font-size: 0.9em; }
   article.speaker-call .ws-field-title {
     font-weight: bold;
     margin-right: 5px; }
+  article.speaker-call input {
+    padding: 0.4em 1.4em;
+    border-radius: 3em;
+    margin-top: 1em; }
 
-article.speaker-call:hover {
-  background-color: rgba(0, 0, 0, 0.05); }
+@media only screen and (max-width: 780px) {
+  body > .container {
+    padding: 100px 15px 0; } }
+
+/*# sourceMappingURL=style.css.map */
